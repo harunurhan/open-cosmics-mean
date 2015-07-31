@@ -1,0 +1,28 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="meanExample">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Open Cosmics: cosmic-ray physics for everyone</title>
+
+	<!-- SPELLS -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+	<script src="core.js"></script>
+
+</head>
+<!-- SET THE CONTROLLER AND GET ALL MOVIES WITH INITIALIZE FUNCTION -->
+<body>
+	<div ng-app='map'>
+    <div ng-controller="MapCtrl">
+        <div id="map_canvas" ui-map="myMap" 
+        style="height:600px;width:800px;border:2px solid #777777;margin:3px; border:1px solid" 
+        ui-options="mapOptions" 
+        ui-event="{'map-idle' : 'onMapIdle()'}"
+        >
+    </div>
+</body>
+</html>
