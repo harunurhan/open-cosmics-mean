@@ -1,5 +1,5 @@
 //Add the requried module 'angular-ui' as a dependency
-angular.module('maptesting', ['ui.map','ui.event']);
+angular.module('map', ['ui.map','ui.event']);
 
 function MapCtrl($scope, $http) {
     var ll = new google.maps.LatLng(13.0810, 80.2740);

@@ -17,12 +17,19 @@
 <!-- SET THE CONTROLLER AND GET ALL MOVIES WITH INITIALIZE FUNCTION -->
 <body>
 	<div ng-app='map'>
-    <div ng-controller="MapCtrl">
-        <div id="map_canvas" ui-map="myMap" 
-        style="height:600px;width:800px;border:2px solid #777777;margin:3px; border:1px solid" 
-        ui-options="mapOptions" 
-        ui-event="{'map-idle' : 'onMapIdle()'}"
-        >
-    </div>
+    	<div ng-controller="MapCtrl">
+	        <div id="map_canvas" ui-map="myMap" 
+	        style="height:400px;width:800px;border:2px solid #777777;margin:3px; border:1px solid" 
+	        ui-options="mapOptions" 
+	        ui-event="{'map-idle' : 'onMapIdle()'}"
+	        >
+	        </div>
+        
+        <!--In addition to creating the markers on the map, div elements with existing google.maps.Marker object should be created to hook up with events -->
+	        <div ng-repeat="marker in myMarkers" ui-map-marker="myMarkers[$index]"
+	                        ui-event="{'map-click': 'markerClicked(marker)'}">
+	        </div>
+    	</div>
+	</div>
 </body>
 </html>
