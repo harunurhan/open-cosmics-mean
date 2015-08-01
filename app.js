@@ -6,9 +6,12 @@ var app = express(); //Create the Express app
 var dbName = 'opencosmics';
 var connectionString = 'mongodb://localhost:27017/' + dbName;
 
+app.set('views', __dirname+'/views'); // used to get ,jade temps
+
 mongoose.connect(connectionString);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public')); // static content
+app.set('view engine', 'jade'); // set view engine to jade
 app.use('/api', station); //This is our route middleware
 module.exports = app;
