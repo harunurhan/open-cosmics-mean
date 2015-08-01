@@ -63,10 +63,10 @@ app.factory('MarkerCreatorService', function () {
 
 });
 
-app.controller('MapCtrl', ['MarkerCreatorService', '$scope', function (MarkerCreatorService, $scope) {
+app.controller('MapCtrl', ['MarkerCreatorService', '$scope', '$http',function (MarkerCreatorService, $scope, $http) {
 
         MarkerCreatorService.createByCoords(40.454018, -3.509205, function (marker) {
-            marker.options.labelContent = 'Autentia';
+            marker.options.labelContent = 'Autentia!';
             $scope.autentiaMarker = marker;
         });
         
@@ -86,6 +86,21 @@ app.controller('MapCtrl', ['MarkerCreatorService', '$scope', function (MarkerCre
         };
 
         $scope.map.markers.push($scope.autentiaMarker);
+
+        $http.get('/api/cosimgs')
+            .success(function(res) {
+                console.log('GET cosimg successful');
+                for (var i = res.length - 1; i >= 0; i--) {
+                    MarkerCreatorService.createByCoords(res[i].latitude, res[i].longitude, function (marker) {
+                        marker.options.labelContent = res[i].imgPath;
+                        $scope.map.markers.push(marker);
+                        refresh(marker);
+                    });
+                };
+            })
+            .error(function(err) {
+                console.log('GET cosimg error: '+err);
+            });
 
         $scope.addCurrentLocation = function () {
             MarkerCreatorService.createByCurrentLocation(function (marker) {
