@@ -1,10 +1,9 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var movieSchema = new Schema({
-	title: String,
-	releaseYear: String,
-	director: String,
-	genre: String,
-	language: String
+var cosimgSchema = new Schema({
+	imgPath: String,
+	filePath: String,
+	longitude: Number,
+	latitude: Number
 });
-module.exports = mongoose.model('Cosimg',movieSchema);
+module.exports = mongoose.model('Cosimg',cosimgSchema);
