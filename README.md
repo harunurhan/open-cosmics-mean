@@ -2,7 +2,7 @@
 
 It is a project for CERN WebFest. You can find more info about the project [here](https://webfest.web.cern.ch/content/open-cosmics-cosmic-ray-physics-everyone)
 
-This repository includes only NodeJS/Express based web app that communicates with MongoDB by using Mongoose and serves REST API and some generated webpages (from Jade templates).
+This repository includes only NodeJS/Express based web app that communicates with MongoDB by using Mongoose and serves REST API & some generated (by using Jade templates) web pages.
 
 ### Running 
 
