@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var cosimg = require('./routes/cosimg'); //routes are defined here
+var cosimg = require('./routes/cosimgs'); //routes are defined here
 var app = express(); //Create the Express app
 var dbName = 'exampleDB';
 var connectionString = 'mongodb://localhost:27017/' + dbName;
