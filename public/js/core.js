@@ -7,7 +7,7 @@ app.factory('MarkerCreatorService', function () {
     function create(latitude, longitude) {
         var marker = {
             options: {
-            	animation: 1
+                animation: 1,
                 labelAnchor: "28 -5",
                 labelClass: 'markerlabel'    
             },
@@ -77,7 +77,7 @@ app.controller('MapCtrl', ['MarkerCreatorService', '$scope', function (MarkerCre
                 latitude: $scope.autentiaMarker.latitude,
                 longitude: $scope.autentiaMarker.longitude
             },
-            zoom: 8,
+            zoom: 12,
             markers: [],
             control: {},
             options: {
