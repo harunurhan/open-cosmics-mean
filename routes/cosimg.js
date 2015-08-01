@@ -34,7 +34,7 @@ router.route('/cosimgs/:id').get(function (req, res) {
 	});
 });
 
-//deleting movie by id
+//delete by id
 router.route('/cosimgs/:id').delete( function (req, res) {
 	Cosimg.remove({_id: req.params.id}, function (err) {
 		if(err) {
