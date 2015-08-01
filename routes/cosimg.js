@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 //retrieve all
-router.route('/cosimg').get(function (req, res) {
+router.route('/cosimgs').get(function (req, res) {
 	Cosimg.find({}).exec(function (err, data) {
 		if(err) {
 			return res.send(err);
@@ -13,9 +13,9 @@ router.route('/cosimg').get(function (req, res) {
 });
 
 //add new
-router.route('/cosimg').post(function (req, res) {
-	var movie = new Cosimg(req.body);
-	movie.save(function (err) {
+router.route('/cosimgs').post(function (req, res) {
+	var cosimg = new Cosimg(req.body);
+	cosimg.save(function (err) {
 		if(err) {
 			return res.send(err);
 		}
@@ -25,12 +25,22 @@ router.route('/cosimg').post(function (req, res) {
 
 
 //retrieve by id
-router.route('/cosimg/:id').get(function (req, res) {
-	Cosimg.findOne({ _id: req.params.id }, function (err, movie) {
+router.route('/cosimgs/:id').get(function (req, res) {
+	Cosimg.findOne({ _id: req.params.id }, function (err, cosimg) {
 		if(err) {
 			return res.send(err);
 		}
-		res.json(movie);
+		res.json(cosimg);
+	});
+});
+
+//deleting movie by id
+router.route('/cosimgs/:id').delete( function (req, res) {
+	Cosimg.remove({_id: req.params.id}, function (err) {
+		if(err) {
+			return res.send(err);
+		}
+		res.json({ message: 'Cosimg deleted'});
 	});
 });
 
