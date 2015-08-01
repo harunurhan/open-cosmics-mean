@@ -1,6 +1,7 @@
-var app = angular.module('AngularGoogleMap', ['google-maps']);
+var map = angular.module('map', ['google-maps']);
+var app = angular.module('AngularApp', ['map']);
 
-app.factory('MarkerCreatorService', function () {
+map.factory('MarkerCreatorService', function () {
 
     var markerId = 0;
 
@@ -54,7 +55,7 @@ app.factory('MarkerCreatorService', function () {
             alert('Unable to locate current position');
         }
     }
-
+    
     return {
         createByCoords: createByCoords,
         createByAddress: createByAddress,
@@ -63,7 +64,7 @@ app.factory('MarkerCreatorService', function () {
 
 });
 
-app.controller('MapCtrl', ['MarkerCreatorService', '$scope', '$http',function (MarkerCreatorService, $scope, $http) {
+map.controller('MapCtrl', ['MarkerCreatorService', '$scope', '$http',function (MarkerCreatorService, $scope, $http) {
 
         MarkerCreatorService.createByCoords(40.454018, -3.509205, function (marker) {
             marker.options.labelContent = 'Autentia!';
@@ -92,7 +93,6 @@ app.controller('MapCtrl', ['MarkerCreatorService', '$scope', '$http',function (M
                 console.log('GET cosimg successful');
                 for (var i = res.length - 1; i >= 0; i--) {
                     MarkerCreatorService.createByCoords(res[i].latitude, res[i].longitude, function (marker) {
-                        marker.options.labelContent = res[i].imgPath;
                         $scope.map.markers.push(marker);
                         refresh(marker);
                     });
