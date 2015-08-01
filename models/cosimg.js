@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var cosimgSchema = new Schema({
-	paths: [{imgPath: String, filePath: String}],
+	imgPath: String,
+	filePath: String,
 	longitude: Number,
 	latitude: Number
 });
