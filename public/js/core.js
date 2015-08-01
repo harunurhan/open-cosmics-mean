@@ -93,6 +93,7 @@ map.controller('MapCtrl', ['MarkerCreatorService', '$scope', '$http',function (M
                 console.log('GET cosimg successful');
                 for (var i = res.length - 1; i >= 0; i--) {
                     MarkerCreatorService.createByCoords(res[i].latitude, res[i].longitude, function (marker) {
+                        res[i].paths[0].imgPath
                         $scope.map.markers.push(marker);
                         refresh(marker);
                     });
