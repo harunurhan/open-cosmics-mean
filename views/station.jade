@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title= station._id
+  body
+    h1 #{station.status}
+    ul
+      each event, i in station.events
+        li 
+          a(href='/api/stations/#{station._id}/events/#{i}') Event #{i}
