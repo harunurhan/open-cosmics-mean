@@ -3,9 +3,8 @@ html
   head
     title= station.name
   body
-    h2 #{station.name} (#{station.status})
+    h2 #{station.name} (#{station.status}) @(Lat: #{station.location.latitude}, Long: #{station.location.longitude})
     h3 #{station.subcluster}, #{station.cluster}, #{station.country}
-
     ul
       each event, i in station.events
         li 
