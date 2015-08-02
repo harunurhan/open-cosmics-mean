@@ -3,11 +3,8 @@ html
   head
     title Event #{event.taskid} @#{event.time[0]}
   body
-    h3 Time: #{event.time[0]}, Window: #{event.window}
-    div
-      div
-        a(href='/files/#{event.taskid}.fits') Download NASA FITS File
-      div
-        a(href='http://crowdcrafting.org/project/opencosmiscs/task/#{event.taskid}') See on Crowdcrafting.org 
-    div
+    h3(style='font-family:verdana;') Time: #{event.time[0]}, Window: #{event.window}
+    button(onclick="window.location.href='/files/1069278.fits'") Download NASA FITS File
+    button(onclick="window.location.href='http://crowdcrafting.org/project/opencosmiscs/task/1069278'") See on Croudcrafting.org
+    div(style='margin-top:5px')
       img(src= event.images.original)
