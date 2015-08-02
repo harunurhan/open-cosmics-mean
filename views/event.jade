@@ -5,6 +5,6 @@ html
   body
     h3(style='font-family:verdana;') Time: #{event.time[0]}, Window: #{event.window}
     button(style='-webkit-border-radius: 28; -moz-border-radius: 28; border-radius: 28px; font-family: Arial; color: #000000; font-size: 15px; background: #ffffff; padding: 7px 10px; border: solid #000000 2px; text-decoration:none; margin-right:5px;' onclick="window.location.href='/files/#{event.taskid}.fits'") Download NASA FITS File
-    button(style='-webkit-border-radius: 28; -moz-border-radius: 28; border-radius: 28px; font-family: Arial; color: #000000; font-size: 15px; background: #ffffff; padding: 7px 10px; border: solid #000000 2px; text-decoration:none;' onclick="window.location.href='http://crowdcrafting.org/project/opencosmics/task/#{event.taskid}'") See on Croudcrafting.org
+    button(style='-webkit-border-radius: 28; -moz-border-radius: 28; border-radius: 28px; font-family: Arial; color: #000000; font-size: 15px; background: #ffffff; padding: 7px 10px; border: solid #000000 2px; text-decoration:none;' onclick="window.location.href='http://crowdcrafting.org/project/opencosmics/task/#{event.taskid}'") See on Crowdcrafting.org
     div(style='margin-top:5px')
       img(src= event.images.original)
