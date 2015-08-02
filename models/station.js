@@ -5,6 +5,7 @@ var stationSchema = new Schema({
 	subcluster: String,
 	country: String,
 	name: String,
+	picture: String,
 	location : {
 		latitude: Number,
 		longitude: Number,
