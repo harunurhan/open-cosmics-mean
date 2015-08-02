@@ -1,10 +1,14 @@
 doctype html
 html
   head
-    title= station._id
+    title= station.name
   body
-    h1 #{station.status}
+    h2 #{station.name} (#{station.status})
+    h3 #{station.subcluster}, #{station.cluster}, #{station.country}
+
     ul
       each event, i in station.events
         li 
-          a(href='/api/stations/#{station._id}/events/#{i}') Event #{i}
+            a(href='/api/stations/#{station._id}/events/#{i}')
+              img(src= event.images.thumb)
+            

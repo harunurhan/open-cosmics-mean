@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var station = require('./routes/stations'); //routes are defined here
 var app = express(); //Create the Express app
 var dbName = 'opencosmics';
-var connectionString = 'mongodb://localhost:27017/' + dbName;
+var connectionString = 'mongodb://opencosmics.cern.ch:27017/' + dbName;
 
 app.set('views', __dirname+'/views'); // used to get ,jade temps
 

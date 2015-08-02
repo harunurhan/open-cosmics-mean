@@ -19,8 +19,8 @@
         for (var i = stations.length - 1; i >= 0; i--) {
              stationMarker = WE.marker([stations[i].location.latitude, stations[i].location.longitude]).addTo(earth);
              stationMarker.bindPopup(
-                "<b>"+ stations[i].livetime +
-                "</b><br>" + stations[i].status + "<a href=/api/stations/detail/" + stations[i]._id+ "> See events</a>", {maxWidth: 150, closeButton: true}).openPopup();
+                "<b>"+ stations[i].name + " ("+ stations[i].status + ")" +
+                "</b><br><img src="+ stations[i].events[0].images.thumb + "><p><a href=/api/stations/detail/" + stations[i]._id+ "> See events</a></p>", {closeButton: true}).openPopup();
         }
         earth.setView([39, -141], 2.8);
              
