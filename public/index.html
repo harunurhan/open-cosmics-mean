@@ -27,15 +27,18 @@
        // ANIMATION STATION BY STATION
       var j = 0;
       var l;
-      setInterval(function() {
-          if(j === stations.length) {
+      var animateToNextStation = function() {
+        if(j === stations.length) {
             j = 0;
           }
           l = stations[j].location;
           earth.panTo([l.latitude,l.longitude],{duration: 2});
           j++;
-      }, 4000);
-   
+      };
+      animateToNextStation();
+      setInterval(animateToNextStation, 4000);
+      
+      // GET request
       function httpGet(url) {
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.open( "GET", url, false );
