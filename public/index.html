@@ -20,7 +20,7 @@
              stationMarker = WE.marker([stations[i].location.latitude, stations[i].location.longitude]).addTo(earth);
              stationMarker.bindPopup(
                 "<b>"+ stations[i].name + " ("+ stations[i].status + ")" +
-                "</b><br><img src="+ stations[i].events[0].images.thumb + "><p><a href=/api/stations/detail/" + stations[i]._id+ "> See events</a></p>", {closeButton: true}).openPopup();
+                "</b><br><a href=/api/stations/detail/" + stations[i]._id+ "><img width=200 src='"+stations[i].picture+"'> </a>", {closeButton: true, maxWidth: 210}).openPopup();
         }
         earth.setView([39, -141], 2.8);
              
