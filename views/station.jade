@@ -3,11 +3,11 @@ html
   head
     title= station.name
   body
-    h2 #{station.name} (#{station.status}) @(Lat: #{station.location.latitude}, Long: #{station.location.longitude})
-    h3 #{station.subcluster}, #{station.cluster}, #{station.country}
-    ul
-      each event, i in station.events
-        li 
-            a(href='/api/stations/#{station._id}/events/#{i}')
-              img(src= event.images.thumb)
-            
+    h1(style='font-family:verdana;') #{station.name} (#{station.status}) 
+    h2(style='font-family:verdana;') #{station.subcluster}, #{station.cluster}, #{station.country}
+    h2(style='font-style:italic') Latitude: #{station.location.latitude}, &nbsp;Longitude: #{station.location.longitude},  &nbsp;Altitude: #{station.location.altitude}m
+    h2(style='font-style:italic') Live since: #{station.livetime}
+    each event, i in station.events
+      div(style='float:left; margin-right:5pt')
+        a(href='/api/stations/#{station._id}/events/#{i}')
+          img(src= event.images.thumb)

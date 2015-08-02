@@ -5,6 +5,9 @@ html
   body
     h3 Time: #{event.time[0]}, Window: #{event.window}
     div
-      a(href='/files/#{event.taskid}.fits') Download NASA FITS File
+      div
+        a(href='/files/#{event.taskid}.fits') Download NASA FITS File
+      div
+        a(href='http://crowdcrafting.org/project/opencosmiscs/task/#{event.taskid}') See on Crowdcrafting.org 
     div
       img(src= event.images.original)
