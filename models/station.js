@@ -1,6 +1,10 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var stationSchema = new Schema({
+	cluster: String,
+	subcluster: String,
+	country: String,
+	name: String,
 	location : {
 		latitude: Number,
 		longitude: Number,
@@ -11,7 +15,11 @@ var stationSchema = new Schema({
 	free: [],
 	events: [
 		{
-			imgPath: String,
+			taskid: Number,
+			images: {
+				thumb: String,
+				original: String
+			},
 			filePath: String,
 			window: Boolean,
 			time: [Date]
