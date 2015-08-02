@@ -4,6 +4,8 @@ It is a project for CERN WebFest. You can find more info about the project [here
 
 This repository includes only NodeJS/Express based web app that communicates with MongoDB by using Mongoose and serves REST API & some generated (by using Jade templates) web pages and home page that is built with WebGL Earth.
 
+##### RESULT: the project was selected as "Best Innovative Project of CERN WebFest 2015"
+
 ### Running 
 
 - Change dbName and connectionString in **app.js** if you are using different dbName or a remotely hosted mongodb.
