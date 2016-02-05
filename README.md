@@ -68,3 +68,6 @@ This repository includes only NodeJS/Express based web app that communicates wit
 
 - Port project to ES6
 - Host the project (probably on Heroku) 
+
+### Link to second part of repo
+- https://github.com/sidgan/opencosmics
