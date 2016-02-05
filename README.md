@@ -64,8 +64,7 @@ This repository includes only NodeJS/Express based web app that communicates wit
   }
 ~~~
 
-### TODO (Not requires Javascript, NodeJS, ExpressJS knowledge) [For team members]
+### Roadmap and long term TODOs
 
-- Find cool looking html templates for station and event page
-- Learn about [Jade Template Engine](http://jade-lang.com/)
-- Convert those cool looking html templates to jade templates and change **views/*.jade.**
+- Port project to ES6
+- Host the project (probably on Heroku) 
